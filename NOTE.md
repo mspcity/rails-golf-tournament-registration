@@ -1,4 +1,4 @@
-USER - REGISTRATION (JOIN) - TOURNAMENT
+# USER - REGISTRATION (JOIN) - TOURNAMENT
 
 User
 - has many Registration
@@ -11,3 +11,16 @@ Registration
 Tournament
 - has many Registration
 - has many User through Registration
+
+User Authentication
+without Devise
+- User Model + Controller + Routes
+
+User - email, password_digest
+
+Routes
+  # get /login, to: sessions new
+  # post /login to: sessions create
+  # get /signup to: users new
+  # post /signup to: users create
+  # delete /logout to: sessions destroy

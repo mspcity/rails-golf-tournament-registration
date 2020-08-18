@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_005443) do
+ActiveRecord::Schema.define(version: 2020_08_18_035645) do
+
+  create_table "registrations", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "handicap_category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.time "check_in"
+    t.time "shotgun_start"
+    t.string "location"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

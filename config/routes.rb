@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :registers
+  resources :tournaments
   root 'static#home'
   # resources :users
 

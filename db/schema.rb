@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_003305) do
     t.string "email"
     t.string "phone"
     t.string "handicap_category"
+    t.integer "user_id"
+    t.integer "tournament_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

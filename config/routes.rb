@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :users
   resources :registers
   resources :tournaments
   root 'static#home'
-  # resources :users
 
   get "/signup", to: "users#new" 
   post "/signup", to: "users#create"

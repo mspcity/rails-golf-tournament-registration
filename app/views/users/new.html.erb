@@ -1,6 +1,7 @@
 <h1>Signup</h1>
 
 <%= form_for @user, url: signup_path do |f| %>
+
 <div>
     <%= f.label :email %>
     <%= f.text_field :email %>
@@ -12,3 +13,5 @@
 
 <%= f.submit "Signup" %>
 <% end %>
+
+<%= link_to "Signup with Github", "/auth/github" %>

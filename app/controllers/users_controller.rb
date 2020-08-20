@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to tournaments_path
     else
+      
       render :new
     end
   end

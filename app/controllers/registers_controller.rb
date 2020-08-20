@@ -1,4 +1,6 @@
 class RegistersController < ApplicationController
+  # before_action 
+
   def index
     if !params[:user].blank?
       @registers = Register.by_user(params[:user])
@@ -18,11 +20,18 @@ class RegistersController < ApplicationController
   end
 
   def create
+    # @register = Register.new(register_params)
+    #   if @register.save
+    #   redirect_to register_path(@register)
+    # else
+    #   render :new
+    # end
     @register = current_user.registers.build(register_params)
     
     if @register.save
       redirect_to register_path(@register)
     else
+      @register.build_tournament unless @register.tournament
       render :new
     end
   end

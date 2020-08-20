@@ -1,1 +1,44 @@
-<h1>Welcome! this is Home</h1>
+<style>
+  .guest, .appinfo, .login{
+    width: 600px;
+    border: 2px solid green;
+  }
+</style>
+<h2>Golf Tournament Resgistration App</h2>
+
+<p>All guests can use below features without creating account</p>
+  <div class = "guest">
+      <ul>
+          <li><%= link_to "View the number of registered players", users_path %></li>
+          <li><%= link_to "List of Tournaments you can register", tournaments_path %></li>
+      </ul>
+  </div>
+
+<p>You can find Golf Tournament you wnat to pacticipate here!</p>
+
+<div class="appinfo">
+    <ul>
+
+      <p><b>AUTHENTICATION</b></p>
+
+      <li>Users create a new account</li>
+      <li>Users login with the created account <b>OR</b> login with GitHub account</li>
+      
+      <p><b>AUTHORIZATION</b></p>
+      
+      <li>User can view list of all of the tournaments </li>
+      <li>User can view details of individual tournament</li>
+      <li>User can register tournament to participate</li>
+      <li>User can view all registration from other users</li>
+    </ul>
+  </div>
+
+  <p>Please sign up or login below to use this application:</p>
+
+
+  <div class="login">
+  <ul>
+    <li><%= link_to "Signup as a new user", signup_path %></li>
+    <li><%= link_to "Login as an existing user", login_path %></li>
+  </ul>
+</div>

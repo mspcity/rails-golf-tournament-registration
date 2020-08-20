@@ -9,8 +9,9 @@ class SessionsController < ApplicationController
   
     if @user && @user.authenticate(user_params[:password])
       session[:user_id] = @user.id
-      redirect_to tournaments_path
+      redirect_to user_path(@user)
     else
+      flash[:error] = "Username or Password was incorrect"
       render :new
     end
   end
@@ -18,7 +19,7 @@ class SessionsController < ApplicationController
   def github
     user = User.find_or_create_from_omniauth(auth)
     session[:user_id] = user.id
-    redirect_to tournaments_path
+    redirect_to user_path(user)
   end
 
   #logout

@@ -1,2 +1,56 @@
 <h1>Tournament List</h1>
 
+<table>
+  <tr>
+    <th>Tournament Name</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Check in</th>
+    <th>Location</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>
+      <% @tournaments.each do |t| %>
+      <%= link_to t.name, tournament_path(t) %>
+      <br>
+      <% end %>
+    </td>
+
+    <td>
+      <% @tournaments.each do |t| %>
+      <%= t.start_date %>
+      <br>
+      <% end %>
+    </td>
+
+    <td>
+      <% @tournaments.each do |t| %>
+      <%= t.end_date %>
+      <br>
+      <% end %>
+    </td>
+
+    <td>
+      <% @tournaments.each do |t| %>
+      <%= t.check_in %>
+      <br>
+      <% end %>
+    </td>
+
+    <td>
+      <% @tournaments.each do |t| %>
+      <%= t.location %>
+      <br>
+      <% end %>
+    </td>
+
+    <td>
+      <% @tournaments.each do |t| %>
+      <%= t.description %>
+      <br>
+      <% end %>
+    </td>
+  </tr>
+</table>

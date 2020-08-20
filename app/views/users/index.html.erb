@@ -1,0 +1,23 @@
+<style>
+    .number, .login{
+      width: 600px;
+      border: 2px solid green;
+    }
+</style>
+
+<div class=number>
+    <h3><ul> There are <u><%= @users.count %></u> players are registered until today. </ul><h3>
+
+</div>
+
+
+
+<p>create account or login to register tournament</p>
+
+<div class="login">
+  <ul>
+    <li><%= link_to "Signup as a new user", signup_path %></li>
+    <li><%= link_to "Login as an existing user", login_path %></li>
+  </ul>
+</div>
+

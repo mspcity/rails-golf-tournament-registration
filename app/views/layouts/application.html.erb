@@ -11,19 +11,19 @@
 
   <body>
   <nav>
-      <ul>
-          <li><%= link_to "Home", root_path %></li>
+     
+          <%= link_to "Home", root_path %>
           <% unless logged_in? %>
-              <li><%= link_to "Signup", signup_path %></li>
-              <li><%= link_to "Login", login_path %></li>
+              <%= link_to "Signup", signup_path %>
+              <%= link_to "Login", login_path %>
           <% else %>
               <li><%= link_to "Logout", logout_path, method: :delete %></li>
         
           <% end %>
-
-          
-      </ul>
+      
   </nav>
+      <img src="https://previews.123rf.com/images/bsd555/bsd5551703/bsd555170300092/74630878-golf-ball-and-clubs-linear-icon-thin-line-illustration-golf-equipment-contour-symbol-vector-isolated.jpg" alt="no image" width="200px" height="150px">
+
     <%= yield %>
   </body>
 </html>

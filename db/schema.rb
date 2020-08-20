@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2020_08_19_233415) do
 
   create_table "tournaments", force: :cascade do |t|
     t.string "name"
-    t.date "start_date"
-    t.date "end_date"
-    t.time "check_in"
-    t.time "shotgun_start"
+    t.string "start_date"
+    t.string "end_date"
+    t.string "check_in"
+    t.string "shotgun_start"
     t.string "location"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false

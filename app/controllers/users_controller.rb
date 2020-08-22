@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_login, except: [:index, :new, :create]
 
   def new
     @user = User.new
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
 
     if @user.save 
       session[:user_id] = @user.id
-      redirect_to tournaments_path
+      redirect_to user_path(@user)
     else
 
       render :new

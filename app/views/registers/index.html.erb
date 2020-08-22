@@ -1,3 +1,20 @@
 <h1>All Registrations</h1>
 
-    <p>Click <%= link_to "here", new_register_path(@user) %> to register tournament you want to pacticipate</p>
+<% @registers.each do |r| %>
+<h3><%= link_to r.tournament.name, register_path(r) %></h3>
+<h3><%= r.name %></h3>
+<h3><%= r.age %></h3>
+<h3><%= r.gender %></h3>
+
+
+<h4>Registered User: <%= r.user.email %></h4>
+
+<% end %>
+
+<%= form_tag('/search', method: 'get') do %>
+<%= label_tag(:age, "Search by age:") %>
+ <%= text_field_tag(:age) %>
+<%= submit_tag("SEARCH") %>
+<% end %>
+
+

@@ -13,9 +13,13 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   
   get "/auth/github/callback", to: "sessions#github"
-  
+
+  get '/search', to: 'registers#search'
+
   resources :users do
     resources :registers, only: [:index, :show, :edit, :new]
   end
+
+  get '*path' => redirect('/')
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

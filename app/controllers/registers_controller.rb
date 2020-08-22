@@ -1,5 +1,5 @@
 class RegistersController < ApplicationController
-  # before_action 
+  before_action :require_login
 
   def index
     if !params[:user].blank?
@@ -9,6 +9,13 @@ class RegistersController < ApplicationController
     else
       @registers = Register.all
     end
+  end
+
+  def search
+    @registers = Register.search_by_age(params[:age])
+    @registers = Register.order_by_age if @registers == []
+
+    render :index
   end
   
   def show
@@ -39,21 +46,31 @@ class RegistersController < ApplicationController
 
   def edit
     set_register
+    if @register.user != current_user
+      redirect_to registers_path
+    end
   end
 
   def update
     set_register
-    if @register.update(register_params)
-      redirect_to register_path(@register)
+    if @register.user == current_user
+      if @register.update(register_params) 
+        redirect_to register_path(@register)
+      else
+        render :edit
+      end
     else
-      render :edit
+      redirect_to registers_path
     end
+    
   end
 
   def destroy
     set_register
-    @register.destroy
-    redirect_to registers_path
+    if @register.user == current_user
+       @register.destroy
+    end
+       redirect_to registers_path
   end
 
   private
@@ -65,6 +82,6 @@ class RegistersController < ApplicationController
     end
 
     def register_params
-      params.require(:register).permit(:name, :age, :gender, :email, :phone, :handicap_category)
+      params.require(:register).permit(:name, :age, :gender, :email, :phone, :handicap_category, :tournament_id)
     end
 end

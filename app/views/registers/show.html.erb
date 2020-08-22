@@ -1,4 +1,11 @@
-<h2>Your Registration</h2>
+<h2>Registration Details</h2>
 
-<p><%= @register.name %></p>
-<p><%= @register.tournament.name %></p>
+<p><%= @register.user.email %> 
+(<%= link_to "Edit", edit_user_register_path(@register.user, @register) if @register.user %>)</p>
+
+
+Tournament Name: <%= link_to @register.tournament.name, tournament_path(@register.tournament) %> <br>
+Name: <%= @register.name %><br>
+Email: <%= @register.email %><br>
+Phone: <%= @register.phone %><br>
+Handicap Category: <%= @register.handicap_category %><br>

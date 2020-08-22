@@ -1,1 +1,6 @@
-<%= render 'form'%>
+<h2>Edit Registration for User: <%= @register.user.email %></h2>
+<br>
+<%= render partial: "registers/form" %>
+
+<br>
+<%= button_to "Delete Registration", register_path(@register), method: :delete, data: { confirm: "Are you sure you want to delete this registration?"} %>

@@ -1,1 +1,4 @@
 <h1>Welcome <%= @user.email %></h1>
+
+  <!--<p>Click <%= link_to "here", new_register_path %> to register tournament you want to pacticipate</p>-->
+  <p>Click <%= link_to "here", new_user_register_path(@user) %> to register tournament you want to pacticipate</p>

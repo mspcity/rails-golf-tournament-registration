@@ -1,3 +1,10 @@
+<style>
+    .form{
+         width: 600px;
+        border: 2px solid green;
+    }
+</style>
+<div class="form">
 <%= form_for(@register) do |f| %>
 
 <%= render partial: "layouts/errors", locals: {object: @register} %> 
@@ -5,16 +12,16 @@
 <%= f.text_field :name %><br>
 
 <%= f.label :email %>
-<%= f.text_field :email %><br>
+<%= f.text_field :email, placeholder: "email@something.com" %><br>
 
 <%= f.label :phone %>
-<%= f.text_field :phone %><br>
+<%= f.text_field :phone, placeholder: "222-222-2222"%><br>
 
 <%= f.label :age %>
 <%= f.text_field :age %><br>
 
 <%= f.label :gender %>
-<%= f.text_field :gender %><br>
+<%= f.text_field :gender, placeholder: "male or female" %><br>
 
 <br>
 
@@ -31,3 +38,5 @@ Select Tournament: <%= f.collection_select :tournament_id, Tournament.all, :id, 
 
 <%= f.submit %>
 <% end %>
+<br>
+</div>

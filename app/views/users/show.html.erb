@@ -1,4 +1,63 @@
+<style>
+  .show{
+     width: 600px;
+    border: 2px solid green;
+  }
+</style>
 <h1>Welcome <%= @user.email %></h1>
 
-  <!--<p>Click <%= link_to "here", new_register_path %> to register tournament you want to pacticipate</p>-->
-  <p>Click <%= link_to "here", new_user_register_path(@user) %> to register tournament you want to pacticipate</p>
+<div class="show">
+<!-- <p>Click <%= link_to "here", new_register_path %> to register tournament you want to pacticipate</p> -->
+<p>Click <%= link_to "here", new_user_register_path(@user) %> to register tournament you want to pacticipate</p>
+
+<p>Click <%= link_to "here", registers_path %> to see all registrations from others</p>
+<br>
+<p><strong>Tournaments you registered:</strong></p>
+
+<table border="1">
+  <tr>
+    <th>Tournament Name</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Location</th>
+  </tr>
+
+  <tr>
+    <td>
+        <% @user.registers.each do |r| %>
+          <%= r.tournament.name %>
+          <br>
+        <% end %>
+    </td>
+
+    <td>
+        <% @user.registers.each do |r| %>
+          <%= r.tournament.start_date %>
+          <br>
+        <% end %>
+    </td>
+    
+    <td>
+        <% @user.registers.each do |r| %>
+          <%= r.tournament.end_date %>
+          <br>
+        <% end %>
+    </td>
+
+    <td>
+        <% @user.registers.each do |r| %>
+          <%= r.tournament.location %>
+          <br>
+        <% end %>
+    </td>
+    
+  </tr>
+  </table>
+  <br>
+  <br>
+</div>
+
+
+    
+   
+ 

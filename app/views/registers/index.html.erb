@@ -2,9 +2,9 @@
 
 <% @registers.each do |r| %>
 <h3><%= link_to r.tournament.name, register_path(r) %></h3>
-<h3><%= r.name %></h3>
-<h3><%= r.age %></h3>
-<h3><%= r.gender %></h3>
+<h3>Name: <%= r.name %></h3>
+<h3>Age: <%= r.age %></h3>
+<h3>Gender: <%= r.gender %></h3>
 
 
 <h4>Registered User: <%= r.user.email %></h4>

@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
 
-  
+
 
 
   def self.find_or_create_from_omniauth(user_info)

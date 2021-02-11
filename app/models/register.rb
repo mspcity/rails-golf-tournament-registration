@@ -10,6 +10,8 @@ class Register < ApplicationRecord
 
   scope :search_by_age, -> (age){where("age = ?", age)}
   scope :order_by_age, -> {order(:age)}
-  scope :youngest_player, -> {where("age > ?", 18)}
-  # scope :order_by_gender, -> (search_gender)(where("gender = ?", search_gender))
+  scope :female, -> {where(gender: "female")}
+  scope :order_by_name, -> {order(:name)}
+  
+  
 end

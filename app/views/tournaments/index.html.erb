@@ -1,11 +1,14 @@
+
 <h1>Tournament List</h1>
 
+<br>
 <table border='1'>
   <tr>
     <th>Tournament Name</th>
     <th>Start Date</th>
     <th>End Date</th>
     <th>Check in</th>
+    <th>Shotgun Start</th>
     <th>Location</th>
     <th>Description</th>
   </tr>
@@ -41,6 +44,13 @@
 
     <td>
       <% @tournaments.each do |t| %>
+      <%= t.shotgun_start %>
+      <br>
+      <% end %>
+    </td>
+
+    <td>
+      <% @tournaments.each do |t| %>
       <%= t.location %>
       <br>
       <% end %>
@@ -54,3 +64,4 @@
     </td>
   </tr>
 </table>
+<br>

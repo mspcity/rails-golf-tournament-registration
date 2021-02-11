@@ -1,10 +1,11 @@
 <style>
     .form{
-         width: 600px;
+         width: 500px;
         border: 2px solid green;
     }
 </style>
 <div class="form">
+<p><strong><u>Registration Form</u></strong></p>
 <%= form_for(@register) do |f| %>
 
 <%= render partial: "layouts/errors", locals: {object: @register} %> 

@@ -1,17 +1,22 @@
 <style>
-  .show{
-     width: 600px;
+  .click, .show{
+     width: 500px;
     border: 2px solid green;
   }
 </style>
 <h1>Welcome <%= @user.email %></h1>
 
-<div class="show">
+<div class="click">
 <!-- <p>Click <%= link_to "here", new_register_path %> to register tournament you want to pacticipate</p> -->
-<p>Click <%= link_to "here", new_user_register_path(@user) %> to register tournament you want to pacticipate</p>
+<ul>
+<li>Click <%= link_to "here", new_user_register_path(@user) %> to register tournament you want to pacticipate</li>
 
-<p>Click <%= link_to "here", registers_path %> to see all registrations from others</p>
+<li>Click <%= link_to "here", registers_path %> to see all registrations from others</li>
+</ul>
+
+</div>
 <br>
+<div class="show">
 <p><strong>Tournaments you registered:</strong></p>
 
 <table border="1">

@@ -1,16 +1,16 @@
 # USER - REGISTRATION (JOIN) - TOURNAMENT
 
 User
-- has many Registration
-- has many Tournament through Registration
+- has many Registrations
+- has many Tournaments through Registration
 
 Registration
 - belongs to User
 - belongs to Tournament
 
 Tournament
-- has many Registration
-- has many User through Registration
+- has many Registrations
+- has many Users through Registration
 
 User Authentication
 without Devise

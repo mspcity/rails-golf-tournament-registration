@@ -1,7 +1,7 @@
 class TournamentsController < ApplicationController
 
   def index
-    @tournaments = Tournament.all
+    @tournaments = Tournament.order_by_tournament_name
   end
 
   def show
